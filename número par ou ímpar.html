@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Número Par ou Ímpar</title>
+  <style>
+    /* ======== Estilo geral ======== */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(120deg, #00c6ff, #0072ff);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 320px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      color: #444;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .par {
+      color: green;
+    }
+
+    .impar {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Verificador de Número</h1>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" placeholder="Ex: 7">
+    <button onclick="verificarNumero()">Verificar</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function verificarNumero() {
+      const numero = document.getElementById("numero").value;
+      const resultado = document.getElementById("resultado");
+
+      if (numero === "") {
+        resultado.innerHTML = "Por favor, digite um número!";
+        resultado.style.color = "red";
+        return;
+      }
+
+      if (numero % 2 === 0) {
+        resultado.innerHTML = `O número <strong>${numero}</strong> é <span class="par">PAR</span>.`;
+      } else {
+        resultado.innerHTML = `O número <strong>${numero}</strong> é <span class="impar">ÍMPAR</span>.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
